@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eid Milad, Deyah!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="sky"></div>
+
+<!-- Lanterns -->
+<template id="lt">
+<svg viewBox="0 0 64 150" aria-hidden="true">
+  <line x1="32" y1="0" x2="32" y2="48" stroke="#c9a227" stroke-width="2.5"/>
+  <rect x="24" y="46" width="16" height="8" rx="3" fill="#c9a227"/>
+  <path d="M32 54 C 8 62, 8 108, 32 116 C 56 108, 56 62, 32 54Z" fill="var(--c)" stroke="#c9a227" stroke-width="3"/>
+  <path d="M32 58 C 20 70, 20 100, 32 112 C 44 100, 44 70, 32 58Z" fill="#fff6c9" opacity=".75"/>
+  <rect x="24" y="114" width="16" height="8" rx="3" fill="#c9a227"/>
+  <path d="M32 122 L32 134" stroke="#c9a227" stroke-width="3"/>
+  <circle cx="32" cy="138" r="5" fill="#c9a227"/>
+</svg>
+</template>
+<div class="lantern l" style="--c:#f48fb1"></div>
+<div class="lantern r" style="--c:#8fcfb0"></div>
+<div class="lantern l2" style="--c:#f6b93b"></div>
+<div class="lantern r2" style="--c:#b39ddb"></div>
+
+<main>
+<section class="page show" id="p1">
+  <!-- Cute crescent moon -->
+  <svg class="moon" viewBox="0 0 200 200" aria-hidden="true">
+    <path d="M140 25 A82 82 0 1 0 175 140 A68 68 0 1 1 140 25Z" fill="#ffd166" stroke="#f6b93b" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M62 92 q8 -9 16 0" stroke="#7a4b2e" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M62 128 q16 14 32 0" stroke="#7a4b2e" stroke-width="5" fill="none" stroke-linecap="round" transform="translate(-6 -6)"/>
+    <ellipse cx="52" cy="112" rx="10" ry="6.5" fill="#ff9fc2" opacity=".85"/>
+    <ellipse cx="96" cy="112" rx="10" ry="6.5" fill="#ff9fc2" opacity=".85" transform="translate(-6 0)"/>
+    <path d="M150 60 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" fill="#fff" opacity=".9"/>
+  </svg>
+
+  <div class="eyebrow">a little something for you</div>
+  <h1 id="title" aria-label="Eid Milad, Deyah!"></h1>
+  <p class="sub">Today the sky is a little brighter because it's your day.</p>
+  <button id="open">Tap for a surprise</button>
+</section>
+
+<section class="page" id="p2">
+  <section class="lanterns" aria-label="Light the lanterns">
+    <h2 class="lh">Light the lanterns</h2>
+    <div class="row" id="row"></div>
+    <div class="count" id="count"></div>
+    <div class="reason" id="reason" aria-live="polite"></div>
+  </section>
+  <button class="nextbtn" id="next2">Next</button>
+</section>
+
+<section class="page" id="p3">
+  <h2 class="lh">A little gift</h2>
+  <p class="sub">Tap the box to open it.</p>
+  <button class="gift" id="gift" type="button" aria-label="Open the gift">
+    <svg viewBox="0 0 160 160" aria-hidden="true">
+      <rect x="26" y="74" width="108" height="72" rx="10" fill="var(--accent)"/>
+      <rect x="72" y="74" width="16" height="72" fill="#fff" opacity=".85"/>
+      <g class="lid">
+        <rect x="18" y="52" width="124" height="28" rx="10" fill="#f06292"/>
+        <rect x="72" y="52" width="16" height="28" fill="#fff" opacity=".85"/>
+        <path d="M80 52 C 52 18, 32 40, 80 52Z" fill="var(--gold)"/>
+        <path d="M80 52 C 108 18, 128 40, 80 52Z" fill="var(--gold)"/>
+        <circle cx="80" cy="52" r="6" fill="#e0a21b"/>
+      </g>
+    </svg>
+  </button>
+  <div class="voucher" id="voucher">
+    <div class="vtag">A gift for Deyah</div>
+    <div class="vtitle" id="gTitle"></div>
+    <p id="gDesc"></p>
+    <p class="vdua" id="gDua"></p>
+  </div>
+  <button class="nextbtn" id="next3">One last thing</button>
+</section>
+
+<section class="page" id="p4">
+  <p class="sub" id="envHint">You have a letter. Tap the envelope.</p>
+  <div class="env" id="env" role="button" tabindex="0" aria-label="Open the envelope">
+    <div class="eback"></div>
+    <div class="paper"><i></i><i></i><i></i></div>
+    <div class="epocket"></div>
+    <div class="flap"></div>
+    <div class="seal"></div>
+  </div>
+  <div class="book" id="card">
+    <div class="sheets" id="sheets"></div>
+    <div class="bnav">
+      <button id="bprev" type="button">Back</button>
+      <span id="bpg"></span>
+      <button id="bnext" type="button">Turn page</button>
+    </div>
+  </div>
+</section>
+
+<nav class="dots" id="dots" aria-hidden="true"></nav>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
